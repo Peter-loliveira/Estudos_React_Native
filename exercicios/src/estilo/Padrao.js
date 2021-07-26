@@ -10,6 +10,7 @@ export default StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     color: "#c05",
+    textAlign: 'center',
   },
   botao: {
     marginTop: 10,
@@ -21,12 +22,14 @@ export default StyleSheet.create({
     borderRadius: 50,
     fontWeight: "bold",
     color: "#ccc",
-    border: '2px solid',
+    borderRadius: 50,
   },
   inp: {
+    width: 200,
     marginTop: 5,
     fontSize: 20,
-    backgroundColor: '#3c5',
+    backgroundColor: '#fff',
+    color: '#c05',
   }
   
 });

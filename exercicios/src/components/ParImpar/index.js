@@ -21,8 +21,6 @@ export default props => (
             </Text> */}
         {/* 2ª estratégia renderizando com função */}
         {parOuImpar(props.numero)}
-        <Inverter texto = 'arievilO egnaL reteP' />
-
-    <MegaSena numeros = {7} /* Total de numeros gerados *//>
+        
     </View>
 )

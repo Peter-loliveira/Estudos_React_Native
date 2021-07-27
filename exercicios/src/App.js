@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import Inverter, { MegaSena } from "./components/Multi";
 
-import Botao from "./components/Botao";
-import Inputs from "./components/Inputs";
 import ParImpar from "./components/ParImpar";
 
 //Componentes da Aplicação
@@ -15,8 +14,8 @@ export default class App extends React.Component {
         <Text style = {styles.f20}>Olá App!</Text>
 		<Simples style = {styles.f20} texto = 'Flexiveis!'/>
 		<ParImpar numero = {320} />
-		{/* <Botao textoBotao = 'OK' />
-		<Inputs /> */}
+		<Inverter texto = 'arievilO egnaL reteP' />
+        <MegaSena numeros = {7} /* Total de numeros gerados *//>
       </View>
     );
   }

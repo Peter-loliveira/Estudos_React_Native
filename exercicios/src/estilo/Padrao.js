@@ -1,35 +1,26 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  container: {
+  },
+	f20: {
+    fontSize: 50,
+		color: '#fff'
+	},
   ex: {
+    flex:1,
+    justifyContent: "center",
+    alignItems: 'center',
+    padding: "50%",
     paddingHorizontal: 15,
     marginVertical: 5,
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: "#222",
     fontSize: 22,
     fontWeight: "bold",
     color: "#c05",
     textAlign: 'center',
+    marginTop: '50%',
+    marginBottom: '50%',
   },
-  botao: {
-    marginTop: 10,
-    marginBottom: 10,
-    textAlign: 'center',
-    fontSize: 50,
-    width: 150,
-    backgroundColor: "#ec27d2",
-    borderRadius: 50,
-    fontWeight: "bold",
-    color: "#ccc",
-    borderRadius: 50,
-  },
-  inp: {
-    width: 200,
-    marginTop: 5,
-    fontSize: 20,
-    backgroundColor: '#fff',
-    color: '#c05',
-  }
   
+    
 });

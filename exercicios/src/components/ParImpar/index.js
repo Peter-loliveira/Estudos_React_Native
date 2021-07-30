@@ -8,7 +8,7 @@ function parOuImpar(num) {
   return <Text style={Padrao.ex}>{resultado}</Text>;
 }
 export default (props) => (
-  <View style={Padrao.ex}>
+  // <View style={Padrao.ex}>
     <Text style={Padrao.ex}>
       {/* 1ª estratégia renderizando com JS no próprio comp */}
       {/* <Text>
@@ -21,5 +21,5 @@ export default (props) => (
       {/* 2ª estratégia renderizando com função */}
       {parOuImpar(props.numero)}
     </Text>
-  </View>
+  // </View>
 );

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 
 //Componentes da Aplicação
 import Simples from "./components/Simples";
@@ -9,13 +9,13 @@ import Inverter, { MegaSena } from "./components/Multi";
 export default class App extends React.Component {
   render() {
     return (
-      <View style = {styles.container}>
+      <SafeAreaView style = {styles.container}>
         <Text style = {styles.f20}>Olá App!</Text>
 		<Simples style = {styles.f20} texto = 'Flexiveis'/>
 		<ParImpar numero = {320} />
 		<Inverter texto = 'arievilO egnaL reteP' />
         <MegaSena numeros = {7} /* Total de numeros gerados *//>
-      </View>
+      </SafeAreaView>
     );
   }
 }

@@ -2,9 +2,9 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import Contador from "../components/Contador";
 
 //Componentes da Aplicação
+import Contador from "../components/Contador";
 import Simples from "../components/Simples";
 import ParImpar from "../components/ParImpar";
 import Inverter, { MegaSena } from "../components/Multi";

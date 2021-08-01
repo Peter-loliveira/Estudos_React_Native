@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
   },
-	f20: {
+	fontGrande: {
     fontSize: 50,
 		color: '#fff'
 	},

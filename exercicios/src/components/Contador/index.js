@@ -26,10 +26,7 @@ export default class Contador extends Component {
         >
             <Text style = {{ fontSize: 20, color: 'red' }}>Incrementar / Zerar</Text>
         </TouchableHighlight>
-        {/* <Button 
-            color ="#d1a" 
-            title ="Somar"
-        /> */}
+
       </View>
     );
   }

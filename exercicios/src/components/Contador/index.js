@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableHighlight, Button } from "react-native";
+import { Text, TouchableHighlight, SafeAreaView } from "react-native";
 
 import Padrao from "../../estilo/Padrao";
 
@@ -18,16 +18,15 @@ export default class Contador extends Component {
 
     render() {
     return (
-      <View style={Padrao.ex}>
-        <Text style = {{ fontSize: 40, color: 'red' }}> {this.state.numero} </Text>
+      <SafeAreaView style={Padrao.ex}>
+        <Text style = {Padrao.fontGrande}> {this.state.numero} </Text>
         <TouchableHighlight
             onPress = {this.maiUm}
             onLongPress = { this.limpar }
         >
-            <Text style = {{ fontSize: 20, color: 'red' }}>Incrementar / Zerar</Text>
+            <Text style = {Padrao.fontGrande}>Incrementar / Zerar</Text>
         </TouchableHighlight>
-
-      </View>
+      </SafeAreaView>
     );
   }
 }

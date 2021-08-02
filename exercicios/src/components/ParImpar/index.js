@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, _Text } from "react-native";
+import { SafeAreaView, Text } from "react-native";
 
 import Padrao from "../../estilo/Padrao";
 
@@ -8,8 +8,8 @@ function parOuImpar(num) {
   return <Text style={Padrao.ex}>{resultado}</Text>;
 }
 export default (props) => (
-  // <View style={Padrao.ex}>
-    <Text style={Padrao.ex}>
+  <SafeAreaView style={Padrao.ex}>
+    <Text style={Padrao.fontGrande}>
       {/* 1ª estratégia renderizando com JS no próprio comp */}
       {/* <Text>
             {
@@ -21,5 +21,5 @@ export default (props) => (
       {/* 2ª estratégia renderizando com função */}
       {parOuImpar(props.numero)}
     </Text>
-  // </View>
+  </SafeAreaView>
 );

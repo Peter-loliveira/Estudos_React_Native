@@ -1,11 +1,13 @@
 import React from "react";
-import { Text } from "react-native";
+import { SafeAreaView, Text } from "react-native";
 
 import Padrao from '../estilo/Padrao'
 
-export default (props) => 
-    <Text style = {Padrao.ex}>
-        {`Textos ${props.texto}`}
-    </Text>
+export default (props) =>
+    <SafeAreaView style = {Padrao.ex}>
+        <Text style={Padrao.fontGrande}>
+            {`Textos ${props.texto}`}
+        </Text>
+    </SafeAreaView>
 
 

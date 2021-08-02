@@ -10,6 +10,9 @@ import ParImpar from "../components/ParImpar";
 import Inverter, { MegaSena } from "../components/Multi";
 import MinMax from "../components/MinMax";
 import Aleatorio from "../components/Aleatorio";
+import estiloMenu from "./estiloMenu";
+import Titulo from "../components/Titulo";
+import Butao from "../components/Butao";
 
 const Mega = () => <MegaSena numeros={5} />;
 const Invert = () => <Inverter texto="arievilO egnaL reteP" />;
@@ -18,12 +21,19 @@ const TextoSimples = () => <Simples texto="Flexiveis" />;
 const Contar = () => <Contador iniciarEm = {100}/>
 const MaiorMenor = () => <MinMax n1 = {20} n2 = {2} />
 const Aleatorios = () => <Aleatorio min = {30} max = {100} />
+const Titulos = () => 
+  <Titulo 
+    principal = 'Cadastro de Produtos'
+    secundario = "Tela de cadastro do Produto"
+  />
+const Butaos = () => <Butao titulo = 'Pressione-me' />
 
 const Drawer = createDrawerNavigator();
 
-function MyDrawer() {
-  return (
-    <Drawer.Navigator>
+const  MyDrawer = () => 
+    <Drawer.Navigator >
+      <Drawer.Screen name="Botões" component={ Butaos } />
+      <Drawer.Screen name="Titulos" component={ Titulos } />
       <Drawer.Screen name="Contador" component={ Contar } />
       <Drawer.Screen name="Megas Sena" component={ Mega } />
       <Drawer.Screen name="Texto Invertido" component={ Invert } />
@@ -32,8 +42,6 @@ function MyDrawer() {
       <Drawer.Screen name="Numero Aleatório" component={ Aleatorios } />
       <Drawer.Screen name="Qual o MAIOR?" component={ MaiorMenor } />
     </Drawer.Navigator>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -41,16 +49,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  f20: {
-    fontSize: 50,
-    color: "#fff",
-  },
 });
 
-export default function Menu() {
-  return (
-      <NavigationContainer>
+export default () =>
+      <NavigationContainer >
         <MyDrawer />
       </NavigationContainer>
-  );
-}

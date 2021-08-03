@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { SafeAreaView,  StyleSheet, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
@@ -10,17 +10,37 @@ import ParImpar from "../components/ParImpar";
 import Inverter, { MegaSena } from "../components/Multi";
 import MinMax from "../components/MinMax";
 import Aleatorio from "../components/Aleatorio";
-import estiloMenu from "./estiloMenu";
 import Titulo from "../components/Titulo";
 import Butao from "../components/Butao";
+import Padrao from "../estilo/Padrao";
+
+// Gera um nr aleatorio entre 0 e 100 para os componentes abaixo
+const nrAleatorio = () =>{
+  return parseInt(Math.random() * (100 - 0) + 0)
+}
 
 const Mega = () => <MegaSena numeros={5} />;
 const Invert = () => <Inverter texto="arievilO egnaL reteP" />;
-const ParOrImpar = () => <ParImpar numero={10} />;
+const ParOrImpar = () => <ParImpar numero={nrAleatorio()} />;
 const TextoSimples = () => <Simples texto="Flexiveis" />;
-const Contar = () => <Contador iniciarEm = {100}/>
-const MaiorMenor = () => <MinMax n1 = {20} n2 = {2} />
-const Aleatorios = () => <Aleatorio min = {30} max = {100} />
+
+// Componente que gera dois botões para incrementar dumeros
+const Contar = () => {
+  return (
+    <SafeAreaView style = {Padrao.ex}>
+      <Contador valorInicial = {100} passo = {10}/>
+      <Text />
+      <Contador/>
+    </SafeAreaView>
+  )
+}
+
+// Componente que gera numeros aleatorios
+const Aleatorios = () => <Aleatorio min = {0} max = {100} />
+
+// Componente que verifica qual nr é maior
+const MaiorMenor = () => <MinMax n1 = {nrAleatorio()} n2 = {nrAleatorio()} />
+
 const Titulos = () => 
   <Titulo 
     principal = 'Cadastro de Produtos'
@@ -32,14 +52,14 @@ const Drawer = createDrawerNavigator();
 
 const  MyDrawer = () => 
     <Drawer.Navigator >
+      <Drawer.Screen name="Contador" component={ Contar } />
+      <Drawer.Screen name="Numero Aleatório" component={ Aleatorios } />
       <Drawer.Screen name="Botões" component={ Butaos } />
       <Drawer.Screen name="Titulos" component={ Titulos } />
-      <Drawer.Screen name="Contador" component={ Contar } />
       <Drawer.Screen name="Megas Sena" component={ Mega } />
       <Drawer.Screen name="Texto Invertido" component={ Invert } />
       <Drawer.Screen name="Par ou Impar?" component={ ParOrImpar } />
       <Drawer.Screen name="Texto Simples" component={ TextoSimples } />
-      <Drawer.Screen name="Numero Aleatório" component={ Aleatorios } />
       <Drawer.Screen name="Qual o MAIOR?" component={ MaiorMenor } />
     </Drawer.Navigator>
 

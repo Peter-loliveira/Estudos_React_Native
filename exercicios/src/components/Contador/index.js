@@ -1,32 +1,30 @@
-import React, { Component } from "react";
-import { Text, TouchableHighlight, SafeAreaView } from "react-native";
+import React, { useState } from 'react'
+import { SafeAreaView, Text, StyleSheet, Button, View } from 'react-native'
 
-import Padrao from "../../estilo/Padrao";
+import Padrao from '../../estilo/Padrao'
+import Estilo from './Estilo'
 
-export default class Contador extends Component {
+export default ({valorInicial = 0, passo = 1}) => {
 
-    state = {
-        numero: this.props.iniciarEm
-    }
+	const [numero, setNumero] = useState(valorInicial)
 
-    maiUm = () =>{
-        this.setState({ numero: this.state.numero + 1 })
-    }
-    limpar = () =>{
-        this.setState({ numero: this.props.iniciarEm })
-    }
-
-    render() {
-    return (
-      <SafeAreaView style={Padrao.ex}>
-        <Text style = {Padrao.fontGrande}> {this.state.numero} </Text>
-        <TouchableHighlight
-            onPress = {this.maiUm}
-            onLongPress = { this.limpar }
-        >
-            <Text style = {Padrao.fontGrande}>Incrementar / Zerar</Text>
-        </TouchableHighlight>
-      </SafeAreaView>
-    );
-  }
+	const inc = () => setNumero(numero + passo)
+	const dec = () => setNumero(numero - passo)
+	return (
+		<SafeAreaView>
+			<View style={Estilo.linha}>
+				<Button
+					color='green'
+					onPress={inc}
+					title='+'
+				/>
+			<Text style={Padrao.fontGrande}>{numero}</Text>
+				<Button
+					color='#f00'
+					onPress={dec}
+					title=' - '
+				/>
+			</View>
+		</SafeAreaView>
+	)
 }

@@ -1,0 +1,21 @@
+{
+	"Componente de Classe": {
+		"scope": "javascript",
+		"prefix": "compClass",
+		"body": [
+		"import React from 'react'"
+		"import { Text, StyleSheet, SafeAreaView } from 'react-native'"
+		""
+		"export default class extends React.Component {"
+  		"	render() {"
+    	"		return ("
+      	"			<SafeAreaView style = {Padrao.ex}>"
+		"				$1"
+      	"			</SafeAreaView>"
+    	"	);"
+  		"}"
+		"}"
+		],
+		"description": "Componente de Classe"
+	}
+}

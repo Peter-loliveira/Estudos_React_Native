@@ -1,0 +1,20 @@
+{
+
+	"Componente Funcional": {
+		"scope": "javascript",
+		"prefix": "compFunc",
+		"body": [
+			"import React from 'react'"
+			"import { SafeAreaView, Text, StyleSheet } from 'react-native'"
+			""
+			"export default props => {"
+    		"	return("
+			"		<SafeAreaView style = {Padrao.ex}>"
+			"			<Text>$1</Text>"				
+			"		</SafeAreaView>"
+    		"	)"
+			"}"
+		],
+		"description": "Extrutura básica de um aruivo React Native"
+	}
+}

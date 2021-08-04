@@ -1,28 +1,40 @@
 import React, { useState } from 'react'
-import { SafeAreaView, Text, StyleSheet, Button, View } from 'react-native'
+import { SafeAreaView, Text, Button, View } from 'react-native'
 
 import Padrao from '../../estilo/Padrao'
 import Estilo from './Estilo'
 
-export default ({valorInicial = 0, passo = 1}) => {
+export default ({ valorInicial = 0, passo = 1 }) => {
 
-	const [numero, setNumero] = useState(valorInicial)
+	// Valor inicial do contador
+	const inicial = valorInicial
 
-	const inc = () => setNumero(numero + passo)
-	const dec = () => setNumero(numero - passo)
+	/* 
+	*Forma de usar o UseState: 
+	*declarase um array com dois elementos
+	*O 1º será o valor que será observado pelo react-native e alterado dinamicamente
+	* 2º será a função responsável por alterar o valor
+	*/
+
+	const [valor, setValor] = useState(valorInicial)
+
+	const somar = () => setValor(valor + passo)
+	const subtrair = () => setValor(valor - passo)
+
+
 	return (
 		<SafeAreaView>
 			<View style={Estilo.linha}>
 				<Button
-					color='green'
-					onPress={inc}
-					title='+'
-				/>
-			<Text style={Padrao.fontGrande}>{numero}</Text>
+					color = 'green'
+					title = 'MAIS'
+					onPress = {somar}
+					/>
+				<Text style = {Padrao.fontGrande}>{valor} ggg</Text>
 				<Button
-					color='#f00'
-					onPress={dec}
-					title=' - '
+					color = 'red'
+					title = 'MENOS'
+					onPress = {subtrair}
 				/>
 			</View>
 		</SafeAreaView>

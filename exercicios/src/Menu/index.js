@@ -14,6 +14,7 @@ import Titulo from "../components/Titulo";
 import Butao from "../components/Butao";
 import PaiDireto from "../components/comunicacaoDireta/Pai";
 import PaiIndireto from "../components/comunicacaoIndireta/Pai";
+import GeraNrAlearorio from "../components/GeraNrAlearorio";
 
 // Importação dos estilos
 import Padrao from "../estilo/Padrao";
@@ -23,7 +24,7 @@ const nrAleatorio = () =>{// Gera um nr aleatorio entre 0 e 100 para os componen
 }
 const Mega = () => <MegaSena numeros={5} />;
 const Invert = () => <Inverter texto="arievilO egnaL reteP" />;
-const ParOrImpar = () => <ParImpar numero={nrAleatorio()} />;
+const ParOrImpar = () => <ParImpar numero={GeraNrAlearorio(100,0)} />;
 const TextoSimples = () => <Simples texto="Flexiveis" />;
 const Contar = () => { // Componente que gera dois botões para incrementar dumeros
   return (
@@ -35,7 +36,7 @@ const Contar = () => { // Componente que gera dois botões para incrementar dume
   )
 }
 const Aleatorios = () => <Aleatorio min = {0} max = {100} />// Componente que gera numeros aleatorios
-const MaiorMenor = () => <MinMax n1 = {nrAleatorio()} n2 = {nrAleatorio()} />// Componente que verifica qual nr é maior
+const MaiorMenor = () => <MinMax n1 = {GeraNrAlearorio(100 , 0)} n2 = {GeraNrAlearorio(100 , 0)} />// Componente que verifica qual nr é maior
 const Titulos = () => 
   <Titulo 
     principal = 'Cadastro de Produtos'
@@ -55,9 +56,9 @@ const  MyDrawer = () =>
       <Drawer.Screen name="Numero Aleatório" component={ Aleatorios } />
       <Drawer.Screen name="Botões" component={ Butaos } />
       <Drawer.Screen name="Titulos" component={ Titulos } />
+      <Drawer.Screen name="Par ou Impar?" component={ ParOrImpar } />
       <Drawer.Screen name="Megas Sena" component={ Mega } />
       <Drawer.Screen name="Texto Invertido" component={ Invert } />
-      <Drawer.Screen name="Par ou Impar?" component={ ParOrImpar } />
       <Drawer.Screen name="Texto Simples" component={ TextoSimples } />
       <Drawer.Screen name="Qual o MAIOR?" component={ MaiorMenor } />
     </Drawer.Navigator>

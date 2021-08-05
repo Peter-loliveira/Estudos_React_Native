@@ -1,17 +1,15 @@
 import React from 'react'
 import { SafeAreaView, Button } from 'react-native'
+import GeraNrAlearorio from '../../GeraNrAlearorio'
 
 export default props => {
-
-const gerarNrAleatorio = ()=> parseInt( Math.random() * (100 - 1 + 1 )) + 1
-
     return(
         <SafeAreaView>
             <Button 
                 color = 'red'
                 title = 'Executar'
                 onPress = {()=>{
-                    const nrGerado = gerarNrAleatorio()
+                    const nrGerado = GeraNrAlearorio(100,0)
                     props.funcao(nrGerado)
                 }}
             />

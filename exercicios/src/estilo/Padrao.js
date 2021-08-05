@@ -5,12 +5,14 @@ export default StyleSheet.create({
   },
 	fontGrande: {
     fontSize: 30,
-		color: '#f3af1f',
+		color: '#e67e22',
     textAlign: 'center',
+    fontWeight: 'bold',
 	},
 	fontMedia: {
     fontSize: 20,
-		color: '#F50',
+		color: '#cf000f',
+    fontWeight: '300',
     textAlign: 'center',
 	},
   ex: {

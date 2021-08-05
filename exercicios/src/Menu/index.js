@@ -15,13 +15,18 @@ import Butao from "../components/Butao";
 import PaiDireto from "../components/comunicacaoDireta/Pai";
 import PaiIndireto from "../components/comunicacaoIndireta/Pai";
 import GeraNrAlearorio from "../components/GeraNrAlearorio";
+import Contadorv2 from "../components/Contadorv2";
+
 
 // Importação dos estilos
 import Padrao from "../estilo/Padrao";
 
+
 const nrAleatorio = () =>{// Gera um nr aleatorio entre 0 e 100 para os componentes abaixo
   return parseInt(Math.random() * (100 - 0) + 0)
 }
+
+const NovoContador = ()=> <Contadorv2 />
 const Mega = () => <MegaSena numeros={5} />;
 const Invert = () => <Inverter texto="arievilO egnaL reteP" />;
 const ParOrImpar = () => <ParImpar numero={GeraNrAlearorio(100,0)} />;
@@ -50,6 +55,7 @@ const PaisFilhosIndiretos = ()=> <PaiIndireto/>
 const Drawer = createDrawerNavigator();
 const  MyDrawer = () => 
     <Drawer.Navigator >
+      <Drawer.Screen name="Contador 2.0" component={ NovoContador } />
       <Drawer.Screen name="Comunicação INDIRETA" component={ PaisFilhosIndiretos } />
       <Drawer.Screen name="Comunicação DIRETA" component={ PaisFilhosDiretos } />
       <Drawer.Screen name="Contador" component={ Contar } />

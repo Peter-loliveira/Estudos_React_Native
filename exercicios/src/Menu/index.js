@@ -12,7 +12,8 @@ import MinMax from "../components/MinMax";
 import Aleatorio from "../components/Aleatorio";
 import Titulo from "../components/Titulo";
 import Butao from "../components/Butao";
-import Pai from "../components/comunicacaoDireta/Pai";
+import PaiDireto from "../components/comunicacaoDireta/Pai";
+import PaiIndireto from "../components/comunicacaoIndireta/Pai";
 
 // Importação dos estilos
 import Padrao from "../estilo/Padrao";
@@ -41,13 +42,15 @@ const Titulos = () =>
     secundario = "Tela de cadastro do Produto"
   />
 const Butaos = () => <Butao titulo = 'Pressione-me' />
-const Pais_Filhos = ()=> <Pai/>
+const PaisFilhosDiretos = ()=> <PaiDireto/>
+const PaisFilhosIndiretos = ()=> <PaiIndireto/>
+
 
 const Drawer = createDrawerNavigator();
 const  MyDrawer = () => 
     <Drawer.Navigator >
-
-      <Drawer.Screen name="Comunicação DIRETA" component={ Pais_Filhos } />
+      <Drawer.Screen name="Comunicação INDIRETA" component={ PaisFilhosIndiretos } />
+      <Drawer.Screen name="Comunicação DIRETA" component={ PaisFilhosDiretos } />
       <Drawer.Screen name="Contador" component={ Contar } />
       <Drawer.Screen name="Numero Aleatório" component={ Aleatorios } />
       <Drawer.Screen name="Botões" component={ Butaos } />

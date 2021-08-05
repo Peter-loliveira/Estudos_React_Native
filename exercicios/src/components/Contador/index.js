@@ -30,7 +30,7 @@ export default ({ valorInicial = 0, passo = 1 }) => {
 					title = 'MAIS'
 					onPress = {somar}
 					/>
-				<Text style = {Padrao.fontGrande}>{valor} ggg</Text>
+				<Text style = {Padrao.fontGrande}>{valor}</Text>
 				<Button
 					color = 'red'
 					title = 'MENOS'

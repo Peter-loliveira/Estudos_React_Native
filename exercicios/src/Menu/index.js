@@ -16,6 +16,7 @@ import PaiDireto from "../components/comunicacaoDireta/Pai";
 import PaiIndireto from "../components/comunicacaoIndireta/Pai";
 import GeraNrAlearorio from "../components/GeraNrAlearorio";
 import Contadorv2 from "../components/Contadorv2";
+import Plataformas from "../components/Plataformas";
 
 
 // Importação dos estilos
@@ -50,11 +51,13 @@ const Titulos = () =>
 const Butaos = () => <Butao titulo = 'Pressione-me' />
 const PaisFilhosDiretos = ()=> <PaiDireto/>
 const PaisFilhosIndiretos = ()=> <PaiIndireto/>
+const Plataforma = ()=> <Plataformas />
 
 
 const Drawer = createDrawerNavigator();
 const  MyDrawer = () => 
     <Drawer.Navigator >
+      <Drawer.Screen name="OS Plataforma" component={ Plataforma } />
       <Drawer.Screen name="Contador 2.0" component={ NovoContador } />
       <Drawer.Screen name="Comunicação INDIRETA" component={ PaisFilhosIndiretos } />
       <Drawer.Screen name="Comunicação DIRETA" component={ PaisFilhosDiretos } />

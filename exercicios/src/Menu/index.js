@@ -15,7 +15,7 @@ import Butao from "../components/Butao";
 import PaiDireto from "../components/comunicacaoDireta/Pai";
 import PaiIndireto from "../components/comunicacaoIndireta/Pai";
 import GeraNrAlearorio from "../components/GeraNrAlearorio";
-import Contadorv2 from "../components/Contadorv2";
+import ContadorV2 from "../components/ContadorV2"
 import Plataformas from "../components/Plataformas";
 
 
@@ -27,7 +27,7 @@ const nrAleatorio = () =>{// Gera um nr aleatorio entre 0 e 100 para os componen
   return parseInt(Math.random() * (100 - 0) + 0)
 }
 
-const NovoContador = ()=> <Contadorv2 />
+const NovoContador = ()=> <ContadorV2 />
 const Mega = () => <MegaSena numeros={5} />;
 const Invert = () => <Inverter texto="arievilO egnaL reteP" />;
 const ParOrImpar = () => <ParImpar numero={GeraNrAlearorio(100,0)} />;

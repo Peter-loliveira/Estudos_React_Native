@@ -10,6 +10,9 @@ function parOuImpar(num) {
 export default (props) => (
   <SafeAreaView style={Padrao.ex}>
     <Text style={Padrao.fontGrande}>
+      {props.numero}
+    </Text>
+    <Text style={Padrao.fontGrande}>
       {/* 1ª estratégia renderizando com JS no próprio comp */}
       {/* <Text>
             {
@@ -19,6 +22,7 @@ export default (props) => (
                 // }
             </Text> */}
       {/* 2ª estratégia renderizando com função */}
+
       {parOuImpar(props.numero)}
     </Text>
   </SafeAreaView>

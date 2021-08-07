@@ -23,14 +23,10 @@ import Plataformas from "../components/Plataformas";
 import Padrao from "../estilo/Padrao";
 
 
-const nrAleatorio = () =>{// Gera um nr aleatorio entre 0 e 100 para os componentes abaixo
-  return parseInt(Math.random() * (100 - 0) + 0)
-}
-
 const NovoContador = ()=> <ContadorV2 />
 const Mega = () => <MegaSena numeros={5} />;
 const Invert = () => <Inverter texto="arievilO egnaL reteP" />;
-const ParOrImpar = () => <ParImpar numero={GeraNrAlearorio(100,0)} />;
+const ParOrImpar = () => <ParImpar numero={GeraNrAlearorio(12,235)} />;
 const TextoSimples = () => <Simples texto="Flexiveis" />;
 const Contar = () => { // Componente que gera dois botões para incrementar dumeros
   return (
@@ -77,6 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: '#000'
   },
 });
 

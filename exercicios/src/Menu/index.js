@@ -18,6 +18,7 @@ import GeraNrAlearorio from "../components/GeraNrAlearorio";
 import ContadorV2 from "../components/ContadorV2"
 import Plataformas from "../components/Plataformas";
 import Relacao from "../components/Relacao";
+import UsuarioLogado from '../components/UsuarioLogado'
 
 // Importação dos estilos
 import Padrao from "../estilo/Padrao";
@@ -48,11 +49,32 @@ const Butaos = () => <Butao titulo='Pressione-me' />
 const PaisFilhosDiretos = () => <PaiDireto />
 const PaisFilhosIndiretos = () => <PaiIndireto />
 const Plataforma = () => <Plataformas />
-const Relacoes = ()=> <Relacao />
+const Relacoes = () => <Relacao />
+const UsuarioLog = () =>
+  <SafeAreaView style={Padrao.ex}>
+    <UsuarioLogado usuario={
+      { nome: 'peter Lange', email: 'peter.loliveira@gmail.com' }
+    } />
+    
+    {/* Os componentes abaixo, antes do ultimop não serão exibidos. Carater de teste */}
+    <UsuarioLogado />
+    <UsuarioLogado usuario={
+      { nome: 'peter Lange'}
+    } />
+    <UsuarioLogado usuario={
+      { email: 'peter.loliveira@gmail.com' }
+    } />
+
+
+    <UsuarioLogado usuario={
+      { nome: 'Jutta Lange', email: 'jlange.oliveira@gmail.com' }
+    } />
+  </SafeAreaView>
 
 const Drawer = createDrawerNavigator();
 const MyDrawer = () =>
   <Drawer.Navigator >
+    <Drawer.Screen name="Usuario Logado" component={UsuarioLog} />
     <Drawer.Screen name="Relações de Familia" component={Relacoes} />
     <Drawer.Screen name="OS Plataforma" component={Plataforma} />
     <Drawer.Screen name="Contador 2.0" component={NovoContador} />

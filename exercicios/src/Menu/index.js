@@ -3,6 +3,9 @@ import { SafeAreaView, StyleSheet, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
+// Importação dos estilos
+import Padrao from "../estilo/Padrao";
+
 //Componentes da Aplicação
 import Contador from "../components/Contador";
 import Simples from "../components/Simples";
@@ -19,9 +22,10 @@ import ContadorV2 from "../components/ContadorV2"
 import Plataformas from "../components/Plataformas";
 import Relacao from "../components/Relacao";
 import UsuarioLogado from '../components/UsuarioLogado'
+import ListaProdutos from "../components/ListaProdutos";
+import ListaProdutosV2 from "../components/ListaProdutosV2";
 
-// Importação dos estilos
-import Padrao from "../estilo/Padrao";
+
 
 
 const NovoContador = () => <ContadorV2 />
@@ -52,28 +56,34 @@ const Plataforma = () => <Plataformas />
 const Relacoes = () => <Relacao />
 const UsuarioLog = () =>
   <SafeAreaView style={Padrao.ex}>
-    <UsuarioLogado usuario={
-      { nome: 'peter Lange', email: 'peter.loliveira@gmail.com' }
-    } />
+    <Text style = {Padrao.fontGrande}>Usuario Logados</Text>
+    <UsuarioLogado 
+      usuario={ { nome: 'peter Lange', email: 'peter.loliveira@gmail.com' } } 
+    />
     
     {/* Os componentes abaixo, antes do ultimop não serão exibidos. Carater de teste */}
     <UsuarioLogado />
-    <UsuarioLogado usuario={
-      { nome: 'peter Lange'}
-    } />
-    <UsuarioLogado usuario={
-      { email: 'peter.loliveira@gmail.com' }
-    } />
+    <UsuarioLogado 
+      usuario={ { nome: 'peter Lange'} } 
+    />
+    <UsuarioLogado 
+      usuario={ { email: 'peter.loliveira@gmail.com' } } 
+    />
 
-
-    <UsuarioLogado usuario={
-      { nome: 'Jutta Lange', email: 'jlange.oliveira@gmail.com' }
-    } />
+    <UsuarioLogado 
+      usuario={ { nome: 'Jutta Lange', email: 'jlange.oliveira@gmail.com' } } 
+    />
   </SafeAreaView>
+  const ListaDeProdutos = ()=> <ListaProdutos />
+  const ListaDeProdutosV2 = ()=> <ListaProdutosV2 />
+
+
 
 const Drawer = createDrawerNavigator();
 const MyDrawer = () =>
   <Drawer.Navigator >
+    <Drawer.Screen name="Lista de Produtos 2.0" component={ListaDeProdutosV2} />
+    <Drawer.Screen name="Lista de Produtos" component={ListaDeProdutos} />
     <Drawer.Screen name="Usuario Logado" component={UsuarioLog} />
     <Drawer.Screen name="Relações de Familia" component={Relacoes} />
     <Drawer.Screen name="OS Plataforma" component={Plataforma} />
@@ -90,15 +100,6 @@ const MyDrawer = () =>
     <Drawer.Screen name="Texto Simples" component={TextoSimples} />
     <Drawer.Screen name="Qual o MAIOR?" component={MaiorMenor} />
   </Drawer.Navigator>
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: '#000'
-  },
-});
 
 export default () =>
   <NavigationContainer >

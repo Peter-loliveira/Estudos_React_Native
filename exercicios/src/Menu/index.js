@@ -24,9 +24,7 @@ import Relacao from "../components/Relacao";
 import UsuarioLogado from '../components/UsuarioLogado'
 import ListaProdutos from "../components/ListaProdutos";
 import ListaProdutosV2 from "../components/ListaProdutosV2";
-
-
-
+import ComponenteControlado from "../components/ComponenteControlado";
 
 const NovoContador = () => <ContadorV2 />
 const Mega = () => <MegaSena numeros={5} />;
@@ -76,12 +74,13 @@ const UsuarioLog = () =>
   </SafeAreaView>
   const ListaDeProdutos = ()=> <ListaProdutos />
   const ListaDeProdutosV2 = ()=> <ListaProdutosV2 />
-
+  const ComponentesControlados = ()=> <ComponenteControlado />
 
 
 const Drawer = createDrawerNavigator();
 const MyDrawer = () =>
   <Drawer.Navigator >
+    <Drawer.Screen name="Componentes COntrolados" component={ComponentesControlados} />
     <Drawer.Screen name="Lista de Produtos 2.0" component={ListaDeProdutosV2} />
     <Drawer.Screen name="Lista de Produtos" component={ListaDeProdutos} />
     <Drawer.Screen name="Usuario Logado" component={UsuarioLog} />

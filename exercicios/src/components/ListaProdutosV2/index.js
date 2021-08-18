@@ -13,7 +13,7 @@ export default props => {
 
     return (
         <SafeAreaView style={estiloLista.container}>
-            <Text style={[Padrao.fontGrande, { alignItems: 'center' }]}>Lista de Produtos V2</Text>
+            <Text style={[Padrao.fontGrande, { alignItems: 'center', marginBottom: 10 }]}>Lista de Produtos V2</Text>
             
             <FlatList
                 data = {produtos}
